@@ -259,7 +259,9 @@ MapRoom.description ="The navigational centre of your ship. A holo-lithe display
 const MainDeck = new Room ("Main Deck");
 MainDeck.description ="The backbone of your vessel. A long, sparsely adorned concourse stands before you, all exits save the one ahead of you, the crew quarters exit, are impassable. Blocking your path is one of the boarders, a Vendrian Trooper!";
 const CrewQuat = new Room ("Crew Quarters");
-CrewQuat.description ="The crew quarters look as though a storm has passed through, with personal effects scattered, deck plating scorched and dented, and other signs of a terrible battle that must have taken place here. Ahead of you is the Tactical Deck and a Vendrian Veteran!";
+CrewQuat.description ="The crew quarters look as though a storm has passed through, with personal effects scattered, deck plating scorched and dented, and other signs of a terrible battle that must have taken place here. To the east is the medical bay. Ahead of you is the Tactical Deck and a Vendrian Veteran!";
+const MedBay = new Room ("Medical Bay");
+MedBay.description = "inside this section is a gruesome sight, many of your badly injured crew are here. Some are awaiting triage, others resigned to their fate as overworked medical staff do the best they can to staunch the flow of casualties coming through the doors. Dr. Kronstadt sees you and beckons you to approach.";
 const TacDeck = new Room ("Tactical Deck");
 TacDeck.description ="The former deck connecting various tactical systems together.Through the burnt-out wreckage of the tactical deck lies the Shield Generator, but blocking your path is a Vendrian Commander!";
 const ShieldGen = new Room ("Shield Generator");
@@ -270,12 +272,14 @@ ShieldGen.description ="The first line of defence for any space vessel. Ahead of
 CommandCentre.linkRoom("north", MainDeck);
 CommandCentre.linkRoom("west", MapRoom);
 CommandCentre.linkRoom("east", Armoury);
-MapRoom.linkRoom("east",CommandCentre);
-Armoury.linkRoom("west",CommandCentre);
-MainDeck.linkRoom("north",CrewQuat);
+MapRoom.linkRoom("east", CommandCentre);
+Armoury.linkRoom("west", CommandCentre);
+MainDeck.linkRoom("north", CrewQuat);
 MainDeck.linkRoom("south", CommandCentre);
-CrewQuat.linkRoom("north",TacDeck);
-CrewQuat.linkRoom("south",MainDeck); 
+CrewQuat.linkRoom("north", TacDeck);
+CrewQuat.linkRoom("east", MedBay)
+CrewQuat.linkRoom("south", MainDeck);
+MedBay.linkRoom("west", CrewQuat) 
 TacDeck.linkRoom("north", ShieldGen);
 TacDeck.linkRoom("south", CrewQuat);
 ShieldGen.linkRoom("south", TacDeck);
@@ -287,6 +291,10 @@ ShieldGen.linkRoom("south", TacDeck);
 const Regill = new Ally ("Fleetmaster");
 Regill.conversation = "Commander, thank the Suns you've survived! We've been boarded and need to get the shields back online or we'll lose the ship! There should be a spare core unit in the Armoury, and you'd do well to arm yourself trying to reach the shield generator. There's no telling how many Vendrian dogs are skulking about down below!";
 Regill.description = "a tall man, dressed in a flowing black and gold robe denoting his station as Fleetmaster, his eyes pale and sight long since gone turns to face you. His face is lined with worry and pride in equal measure.";
+
+const Kronstadt = new Ally ("Doctor")
+Kronstadt.conversation = "Wish I could greet you under happier circumstances Commander but as you can see it's chaos down here. Vendrians' tore through this whole deck before we knew what happened. If you're on your way to get the shields back online you're going the right way, get back to the crew quarters and keep heading north. I'd be careful though, they aren't going to make it easy on you... "
+Kronstadt.description = "as tall as he is wide. He smiles plaintively in your direction, his eyes somehow looking past you. Overworked and bloodsplattered, the head of the medical section looks as if he's been on his feet for 3 days. With silver hair, handlebar mustache and the apperance of a man in his mid 60's, he somehow manages to excude an aura of calm despite the maelstrom swirling around him";
 
 
 
@@ -318,7 +326,9 @@ CrewQuat.character = Veteran;
 
 TacDeck.character = Commander; 
 
-MapRoom.character = Regill; 
+MapRoom.character = Regill;
+
+MedBay.character = Kronstadt;
 
 /***action***/
 
