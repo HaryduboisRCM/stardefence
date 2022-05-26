@@ -251,13 +251,13 @@ CoreUnit.description = "This highly complex ,metallic sphere full of dark energy
 /*** Room Descriptions ***/
 
 const CommandCentre = new Room ("Command Centre");
-CommandCentre.description = "the bridge of the ISS Orpheus, your trusty captain's chair a smouldering heap of melted plasteel and ruined upholstery. The rest of the bridge is badly damaged with injured crew, destroyed panels and failing monitors everywhere you look. With the intruder alert warning blasting out over the comm system, it doesn't take you long to realise that the current situation was no accident and that you'll have to act fast.You can see an exit to Stellar Navigation to your left, and the Armoury on your right. Better head to those first before heading north to the rest of the ship.";
+CommandCentre.description = "the bridge of the ISS Orpheus, your trusty captain's chair a smouldering heap of melted plasteel and ruined upholstery. The rest of the bridge is badly damaged with injured crew, destroyed panels and failing monitors everywhere you look. With the intruder alert warning blasting out over the comm system, it doesn't take you long to realise that the current situation was no accident and that you'll have to act fast.You can see an exit to Stellar Navigation to the west, and the Armoury to the east. Better head to those first before heading north to the rest of the ship.";
 const Armoury = new Room ("Armoury");
 Armoury.description = "the well-stocked armoury and supply station of the ISS Orpheus,thankfully untouched by enemy boarders. There could be something useful in here...";
 const MapRoom = new Room ("Stellar Navigation");
 MapRoom.description ="The navigational centre of your ship. A holo-lithe displays the local cluster and fleet position, enemy ship indicators glare ominiously around your fleet indictor icon. Across the room you see your second in command, Fleetmaster Regill.";
 const MainDeck = new Room ("Main Deck");
-MainDeck.description ="The backbone of your vessel. A long, sparsely adorned concourse stands before you, all exits save the one ahead of you, the crew quarters exit, are impassable. Blocking your path is one of the boarders, a Vendrian Trooper!";
+MainDeck.description ="The backbone of your vessel. A long, sparsely adorned concourse stands before you, all exits save the one to the north of you, the crew quarters exit, are impassable. Blocking your path is one of the boarders, a Vendrian Trooper!";
 const CrewQuat = new Room ("Crew Quarters");
 CrewQuat.description ="The crew quarters look as though a storm has passed through, with personal effects scattered, deck plating scorched and dented, and other signs of a terrible battle that must have taken place here. To the east is the medical bay. Ahead of you is the Tactical Deck and a Vendrian Veteran!";
 const MedBay = new Room ("Medical Bay");
