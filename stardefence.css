@@ -1,0 +1,37 @@
+body{
+    text-align: center;
+    background-image: url(stars.jpeg)
+    }
+    
+  #gamearea
+    {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height:600px;
+      width:800px;
+      background-color: rgba(0, 0, 0, 0.808);
+      border-radius: 5px;
+      color: green;
+      padding:10px;
+      opacity: 50px;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 16px;
+      border-style: ridge;
+      background-clip: padding-box;
+    }
+
+      input{
+      color: green;
+      background-color: rgba(0, 0, 0, 0.904); 
+      border: 0px;
+      opacity: 75px;
+    }
+  
+    input:focus {
+      outline: none !important;
+      border-color: #719ECE;
+    }
