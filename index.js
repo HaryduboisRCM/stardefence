@@ -105,7 +105,7 @@ class Room{
         alert("Description is too short.");
         return;
     }
-    this._name = value;
+    this._description = value;
  }
 
   describe() {
@@ -299,9 +299,6 @@ Kronstadt.conversation = "Wish I could greet you under happier circumstances Com
 Kronstadt.description = "as tall as he is wide. He smiles plaintively in your direction, his eyes somehow looking past you. Overworked and bloodsplattered, the head of the medical section looks as if he's been on his feet for 3 days. With silver hair, handlebar mustache and the apperance of a man in his mid 60's, he somehow manages to excude an aura of calm despite the maelstrom swirling around him";
 
 
-
-
-
 /***Enemies***/
 
 const Trooper = new Enemy ("Vendrian Trooper");
@@ -354,7 +351,7 @@ function displayRoomInfo(room){
 function commandHandler(command, character) {
     switch (command) {
       case "fight":
-        //work out how to pass items to fight method from player backpack
+       
         if (character.fight() === true) {
           msg = "congratulations you defeated" + character.name;
           alert(msg)
@@ -374,7 +371,7 @@ function commandHandler(command, character) {
       default:
         alert("not done yet")
         break;
-      //blank command box after commands 
+  
     }
   }
 
