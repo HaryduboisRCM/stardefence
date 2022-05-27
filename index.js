@@ -344,8 +344,7 @@ function displayRoomInfo(room){
       occupantMsg = room.character.describe() + " . " + room.character.converse()
   }
 
-  textContent = "<p>" + room.describe() + "</p>" + "<p>" +
-    occupantMsg + "</p>" + "<p>" + room.getDetails() + "</p>";
+  textContent = "<p>" + room.describe() + "</p>" + "<p>" + occupantMsg + "</p>" + "<p>" + room.getDetails() + "</p>";
 
 
     document.getElementById("textarea").innerHTML = room.describe();
