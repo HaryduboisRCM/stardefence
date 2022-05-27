@@ -237,16 +237,18 @@ class Ally extends Character {
 
 /***Items
 
-const DisruptorPistol = new Item ("disruptor pistol")
+const DisruptorPistol = new item ("disruptor pistol")
 DisruptorPistol.description = " The cool, weighty pistol feels reassuring in your hand. Since the earliest days of local cluster colonisation efforts, these weapons have seen service. You surmise the elegant design and destructive power is reason enough for the weapon's longevity. "
 
-const PlasmaLance = new Item ("plasma lance")
-PlasmaLance.description = "Unmatched in destructive power, using a plasma lance aboard a starship is strongly discouraged due to the risk of explosive decompression and hull rupture. Still, against heavily armoured targets, in an emergency, it should work. And this is an emergency after all..."
+*/
 
-const CoreUnit = new Item ("shield core unit")
+const PlasmaLance = new item ("plasma lance")
+PlasmaLance.description = "Unmatched in destructive power, using a plasma lance aboard a starship is strongly discouraged due to the risk of explosive decompression and hull rupture. Still, against heavily armoured targets, in an emergency, it should work. And this is an emergency after all..."
+/*
+const CoreUnit = new item ("shield core unit")
 CoreUnit.description = "This highly complex ,metallic sphere full of dark energy emissions, high frequency proton discharges and antimatter linking chambers fits snuggly in the palm of your hand. Required to stabilise the shield generator, its worth is almost that of the ship itself."
 
-***/
+
 
 /*** Room Descriptions ***/
 
@@ -330,6 +332,8 @@ MapRoom.character = Regill;
 
 MedBay.character = Kronstadt;
 
+Armoury.item = PlasmaLance; 
+
 /***action***/
 
 function displayRoomInfo(room){
@@ -385,6 +389,7 @@ function startGame(){
             let command = document.getElementById("ui").value.toLowerCase();
             const directions = ["north" , "south" , "east" , "west"]
             const commands = ["fight" , "talk" , "describe"]
+            document.getElementById("ui").value = "";
             if (directions.includes(command)) {
                 currentRoom = currentRoom.move(command)
                 displayRoomInfo(currentRoom);
