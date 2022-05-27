@@ -22,7 +22,7 @@ class Room{
     }
 
     get roomItem() {
-        return
+        return this._roomItem;
     }
 
     set name(value) {
@@ -61,7 +61,7 @@ class Room{
         const entries = Object.entries(this._linkedRooms);
         let details = []
         for (const[direction,room] of entries) {
-            let text = "The " + room._name + "lies to the " + direction;
+            let text = "The " + room._name + " lies to the " + direction;
             details.push(text);
         }
         return details;
